@@ -16,11 +16,9 @@ class CountDownTimer{
   }
 
   String returnTime(Duration t){
-    String minutes = (t.inMinutes < 10 ) ? '0' + t.inMinutes.toString() : 
-      t.inMinutes.toString();
+    String minutes = t.inMinutes.toString().padLeft(2, '0');
       int numSeconds = t.inSeconds - (t.inMinutes * 60);
-      String seconds = (numSeconds < 10 ) ? '0' + numSeconds.toString() :
-      numSeconds.toString();
+      String seconds = numSeconds.toString().padLeft(2, '0');
       String formattedTime = minutes + ":" + seconds;
       return formattedTime; 
   }
